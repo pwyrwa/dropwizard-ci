@@ -3,7 +3,7 @@ package org.pio.dropwizard.resource;
 import com.jayway.restassured.response.Response;
 import org.junit.ClassRule;
 import org.junit.Test;
-import org.pio.test.ContextProvider;
+import org.pio.test.TestContext;
 
 import static com.jayway.restassured.RestAssured.given;
 import static org.fest.assertions.Assertions.assertThat;
@@ -16,7 +16,7 @@ import static org.fest.assertions.Assertions.assertThat;
 public class ByeResourceIT {
 
     @ClassRule
-    public static ContextProvider provider = new ContextProvider(false);
+    public static TestContext provider = new TestContext(false);
 
     @Test
     public void byeResource_ok(){

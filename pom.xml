@@ -11,37 +11,43 @@
     <properties>
         <fest-assert-core.version>2.0M8</fest-assert-core.version>
         <rest-assured.version>1.6.1</rest-assured.version>
+        <mockito-all.version>1.8.4</mockito-all.version>
+        <fest-assert.version>1.4</fest-assert.version>
+        <junit.version>4.11</junit.version>
+        <hamcrest-integration.version>1.3.RC2</hamcrest-integration.version>
+        <commons-lang3.version>3.1</commons-lang3.version>
+        <dropwizard-core.version>0.6.1</dropwizard-core.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>com.yammer.dropwizard</groupId>
             <artifactId>dropwizard-core</artifactId>
-            <version>0.6.1</version>
+            <version>${dropwizard-core.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.1</version>
+            <version>${commons-lang3.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-integration</artifactId>
-            <version>1.3.RC2</version>
+            <version>${hamcrest-integration.version}</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.11</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.easytesting</groupId>
             <artifactId>fest-assert</artifactId>
-            <version>1.4</version>
+            <version>${fest-assert.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -53,7 +59,7 @@
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-all</artifactId>
-            <version>1.8.4</version>
+            <version>${mockito-all.version}</version>
             <scope>test</scope>
         </dependency>
 
@@ -63,7 +69,30 @@
             <version>${rest-assured.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>cpsuite</groupId>
+            <artifactId>cpsuite</artifactId>
+            <version>1.2.5</version>
+            <scope>test</scope>
+        </dependency>
+
+
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <parallel>classes</parallel>
+                    <threadCount>2</threadCount>
+                    <includes>
+                        <include>**/DWCITestSuite.class</include>
+                    </includes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     
 </project>

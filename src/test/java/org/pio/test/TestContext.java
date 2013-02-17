@@ -12,15 +12,15 @@ import org.slf4j.LoggerFactory;
  * Date: 2/16/13
  * Time: 2:44 PM
  */
-public class ContextProvider extends TestWatcher {
+public class TestContext extends TestWatcher {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ContextProvider.class);
+    private static final Logger LOG = LoggerFactory.getLogger(TestContext.class);
 
     private static Boolean IN_SUITE = false;
     private DWCIService service;
     private final Boolean forSuite;
 
-    public ContextProvider(Boolean forSuite) {
+    public TestContext(Boolean forSuite) {
         this.forSuite = forSuite;
         if (this.forSuite) {
             IN_SUITE = true;
