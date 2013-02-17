@@ -1,0 +1,7 @@
+
+helloTemplate: hello %s from test
+byeTemplate: bye %s from test
+
+http:
+  port: 5050
+  adminPort: 5051

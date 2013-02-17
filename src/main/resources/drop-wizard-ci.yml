@@ -1,0 +1,7 @@
+
+helloTemplate: hello %s from me
+byeTemplate: bye %s from me
+
+http:
+  port: 6060
+  adminPort: 6061
